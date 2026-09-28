@@ -1,0 +1,149 @@
+:root {
+  --bg: #f6f7fb;
+  --surface: #ffffff;
+  --surface-2: #f0f2f7;
+  --border: #e2e5ee;
+  --text: #1a1d29;
+  --text-muted: #6b7185;
+  --accent: #5b5bf0;
+  --accent-contrast: #ffffff;
+  --accent-soft: #ececfe;
+  --ok: #1f9d55;
+  --warn: #c98a00;
+  --danger: #d6333b;
+  --radius: 12px;
+  --shadow: 0 1px 2px rgba(20, 24, 40, 0.06), 0 4px 16px rgba(20, 24, 40, 0.05);
+
+  font-family: Inter, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+  font-size: 15px;
+  line-height: 1.55;
+  color: var(--text);
+  background: var(--bg);
+  color-scheme: light dark;
+  -webkit-font-smoothing: antialiased;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #0f1117;
+    --surface: #171a23;
+    --surface-2: #1f2330;
+    --border: #2a2f3e;
+    --text: #e7e9f0;
+    --text-muted: #9097ab;
+    --accent: #8083ff;
+    --accent-contrast: #0f1117;
+    --accent-soft: #23254a;
+    --ok: #3ccb7f;
+    --warn: #f0b429;
+    --danger: #ff6b72;
+    --shadow: 0 1px 2px rgba(0, 0, 0, 0.3), 0 4px 16px rgba(0, 0, 0, 0.25);
+  }
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background: var(--bg);
+}
+
+h1,
+h2,
+h3 {
+  margin: 0;
+  line-height: 1.2;
+}
+
+a {
+  color: var(--accent);
+}
+
+input,
+textarea,
+select,
+button {
+  font: inherit;
+  color: inherit;
+}
+
+input,
+textarea,
+select {
+  width: 100%;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 8px 10px;
+  outline: none;
+  transition: border-color 0.15s;
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+  border-color: var(--accent);
+}
+
+input[type='checkbox'] {
+  width: auto;
+  accent-color: var(--accent);
+}
+
+button {
+  cursor: pointer;
+  border: 1px solid transparent;
+  border-radius: 8px;
+  padding: 8px 14px;
+  background: none;
+  white-space: nowrap;
+}
+
+button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+button.primary {
+  background: var(--accent);
+  color: var(--accent-contrast);
+  font-weight: 600;
+}
+
+button.primary:not(:disabled):hover {
+  filter: brightness(1.08);
+}
+
+button.ghost {
+  border-color: var(--border);
+  background: var(--surface);
+}
+
+button.ghost:not(:disabled):hover {
+  background: var(--surface-2);
+}
+
+button.small {
+  padding: 4px 10px;
+  font-size: 13px;
+}
+
+button.full {
+  width: 100%;
+}
+
+button.link {
+  padding: 0;
+  border: 0;
+  font-size: 13px;
+  color: var(--accent);
+}
+
+button.link.danger {
+  color: var(--danger);
+}
